@@ -3,6 +3,8 @@ let qSection = document.querySelector('#question-section')
 let eSection = document.querySelector('#editor-section')
 let ruler = document.querySelector('#ruler')
 let overlay = document.querySelector('.overlay')
+let getExpectedValue = document.getElementById('expected-btn')
+let submitBtn = document.getElementById('submit-btn')
 
 let isDragging = false
 let containerWidth 
@@ -25,3 +27,18 @@ document.addEventListener('mouseup', () => {
   isDragging = false
   overlay.style.display = 'none'
 })
+
+
+let latestCode = null;
+
+//reading message from editor
+// window.addEventListener('message', (e) => {
+//   console.log(e)
+//     if (e.data && e.data.language) {
+//         latestCode = e.data;
+//     }
+// });
+
+submitBtn.addEventListener('click', () => {
+    console.log("Submitting:", latestCode);
+});
